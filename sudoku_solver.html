@@ -3,10 +3,124 @@
 <meta charset='utf-8'>
 
 <html>
+<link rel="stylesheet" href="sudokuStyle.css" type="text/css"></link>
+<body>
 <script src="file:///C:/Users/Jack's%20PC/Documents/GitHub/EECS368-Project-1/P5%20Files/p5.js"></script>
 <script src="file:///C:/Users/Jack's%20PC/Documents/GitHub/EECS368-Project-1/P5%20Files/p5.sound.js"></script>
 <script src="file:///C:/Users/Jack's%20PC/Documents/GitHub/EECS368-Project-1/JS%20Files/Cell.js"></script>
 <script src="file:///C:/Users/Jack's%20PC/Documents/GitHub/EECS368-Project-1/JS%20Files/sudoku_solver.js"></script>
 
+<table id="table" align="center" style="padding-right: 100px;display: inline-block;float: right">
+<tr>
+  <td><input type="number" id="00" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="01" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="02" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="03" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="04" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="05" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="06" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="07" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="08" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+</tr>
+
+<tr>
+  <td><input type="number" id="10" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="11" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="12" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="13" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="14" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="15" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="16" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="17" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="18" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+</tr>
+
+<tr>
+  <td><input type="number" id="20" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="21" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="22" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="23" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="24" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="25" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="26" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="27" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="28" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+</tr>
+
+<tr>
+  <td><input type="number" id="30" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="31" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="32" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="33" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="34" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="35" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="36" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="37" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="38" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+</tr>
+
+<tr>
+  <td><input type="number" id="40" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="41" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="42" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="43" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="44" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="45" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="46" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="47" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="48" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+</tr>
+
+<tr>
+  <td><input type="number" id="50" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="51" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="52" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="53" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="54" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="55" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="56" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="57" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="58" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+</tr>
+
+<tr>
+  <td><input type="number" id="60" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="61" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="62" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="63" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="64" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="65" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="66" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="67" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="68" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+</tr><br>
+
+<tr>
+  <td><input type="number" id="70" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="71" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="72" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="73" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="74" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="75" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="76" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="77" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="78" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center;webkit-appearance: none; margin: 0"></td>
+</tr>
+
+<tr>
+  <td><input type="number" id="80" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="81" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="82" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="83" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="84" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="85" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="86" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="87" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+  <td><input type="number" id="88" value = "" style="width: 30px;height: 30px;font-size: 40px;text-align: center"></td>
+</tr>
+
+</table>
+<input type="submit" id="submitButton" onclick="fillArray()" style="display: inline-bock;float: right;height: 40px;width: 70px;text-align: center"></input>
+</body>
 
 </html>

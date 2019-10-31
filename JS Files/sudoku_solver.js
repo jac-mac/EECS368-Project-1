@@ -4,7 +4,38 @@ let numOfColumns;
 let cellWidth = 100;
 var grid;
 
-make2DArray = function(rows, cols)
+fillArray = function()
+{
+  var table = document.getElementById('table');
+    for (var r = 0, n = table.rows.length; r < n; r++) {
+        for (var c = 0, m = table.rows[r].cells.length; c < m; c++) {
+            grid[c][r].setValue(table.rows[r].cells[c].firstChild.value);
+        }
+    }
+
+    for (var r = 0, n = table.rows.length; r < n; r++) {
+        for (var c = 0, m = table.rows[r].cells.length; c < m; c++) {
+            if(table.rows[r].cells[c].firstChild.value == "")
+            {
+              grid[c][r].setReveal(false);
+            }
+            else
+            {
+              grid[c][r].setReveal(true);
+            }
+        }
+    }
+
+    document.getElementById('submitButton').disabled = 'true';
+
+}
+
+setTableValues = function()
+{
+
+}
+
+make2DArray = function(cols, rows)
 {
   var arr = new Array(rows);
   for(var i = 0; i < arr.length; i++)
@@ -41,7 +72,7 @@ function mousePressed()
     {
       if(grid[i][j].contains(mouseX, mouseY))
       {
-        grid[i][j].reveal();
+        grid[i][j].setReveal(true);
       }
     }
   }
