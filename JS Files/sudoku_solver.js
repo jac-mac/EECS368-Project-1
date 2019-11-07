@@ -3,9 +3,11 @@ let numOfRows;
 let numOfColumns;
 let cellWidth = 100;
 var grid;
+let submitButtonPressed = false;
 
 fillArray = function()
 {
+  submitButtonPressed = true;
   var table = document.getElementById('table');
     for (var r = 0, n = table.rows.length; r < n; r++) {
         for (var c = 0, m = table.rows[r].cells.length; c < m; c++) {
@@ -30,7 +32,59 @@ fillArray = function()
 
 }
 
-setTableValues = function()
+findUnassigned = function(arr)
+{
+  for(let i = 0; i < 9; i++)
+  {
+    for(let j = 0; j < 9; j++)
+    {
+      if(arr[i][j] == "")
+        return true;
+    }
+  }
+  return false;
+}
+
+checkRow = function(row, value, arr)
+{
+  for(let i = 0; i < 9; i++)
+  {
+    if(arr[row][i].getValue() == value)
+      return false;
+  }
+  return true;
+}
+
+checkCol = function(col, value, arr)
+{
+  for(let i = 0; i < 9; i++)
+  {
+    if(arr[i][col].getValue() == value)
+      return false;
+  }
+
+  return true;
+}
+
+checkCluster = function(row, col, value, arr)
+{
+  for(let i = 0; i < 3; i++)
+  {
+    for(let j = 0; j < 3; j++)
+    {
+      if(arr[i+row][j+col].getValue() == value)
+        return false;
+    }
+  }
+  return true;
+}
+
+isSafe = function(row, col, value, arr)
+{
+  return (checkRow(row, value, arr) && checkCol(col, value, arr) && checkCluster(row, col, value, arr));
+}
+
+solveSudoku = function(arr)
 {
 
 }
@@ -72,7 +126,8 @@ function mousePressed()
     {
       if(grid[i][j].contains(mouseX, mouseY))
       {
-        grid[i][j].setReveal(true);
+        if(!grid[i][j].getRevealed())
+          grid[i][j].setReveal(true);
       }
     }
   }

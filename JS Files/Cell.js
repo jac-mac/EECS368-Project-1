@@ -4,7 +4,6 @@ function Cell(xPosition, yPosition, widthOfCell) {
   this.xPos = xPosition;
   this.yPos = yPosition;
   this.revealed = true;
-  this.bee = true;
 }
 
   Cell.prototype.show = function() {
@@ -35,4 +34,9 @@ function Cell(xPosition, yPosition, widthOfCell) {
   Cell.prototype.getValue = function()
   {
     return this.value;
+  }
+
+  Cell.prototype.getRevealed = function()
+  {
+    return this.revealed;
   }
