@@ -11,7 +11,10 @@ fillArray = function()
   var table = document.getElementById('table');
     for (var r = 0, n = table.rows.length; r < n; r++) {
         for (var c = 0, m = table.rows[r].cells.length; c < m; c++) {
-            grid[c][r].setValue(table.rows[r].cells[c].firstChild.value);
+            if(table.rows[r].cells[c].firstChild.value != "")
+              grid[c][r].setValue(table.rows[r].cells[c].firstChild.value);
+            else
+              grid[c][r].setValue(0);
         }
     }
 
@@ -20,10 +23,13 @@ fillArray = function()
             if(table.rows[r].cells[c].firstChild.value == "")
             {
               grid[c][r].setReveal(false);
+              //console.log("(" + c + ", " + r + ") is NOT revealed.\n")
             }
             else
             {
               grid[c][r].setReveal(true);
+              //console.log("(" + c + ", " + r + ") IS revealed.\n")
+
             }
         }
     }
@@ -126,8 +132,8 @@ function mousePressed()
     {
       if(grid[i][j].contains(mouseX, mouseY))
       {
-        if(!grid[i][j].getRevealed())
-          grid[i][j].setReveal(true);
+        grid[i][j].setReveal(true);
+        //console.log(grid[i][j].getRevealed())
       }
     }
   }
@@ -141,6 +147,7 @@ function draw() {
     for(let j = 0; j < numOfColumns; j++)
     {
       grid[i][j].show();
+      //console.log("(" + i + ", " + j + " " + grid[i][j].getRevealed())
     }
   }
 }

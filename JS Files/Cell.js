@@ -1,9 +1,9 @@
 function Cell(xPosition, yPosition, widthOfCell) {
-  this.value = "";
+  this.value = 0;
   this.width = widthOfCell;
   this.xPos = xPosition;
   this.yPos = yPosition;
-  this.revealed = true;
+  this.revealed = false;
 }
 
   Cell.prototype.show = function() {
@@ -11,9 +11,12 @@ function Cell(xPosition, yPosition, widthOfCell) {
       noFill();
       rect(this.xPos, this.yPos, this.width, this.width);
 
-      fill(0);
-      textSize(50);
-      text(this.value, (this.xPos+this.width/2)-14, (this.yPos+this.width/2)+16);
+      if(this.revealed == true)
+      {
+        fill(0);
+        textSize(50);
+        text(this.value, (this.xPos+this.width/2)-14, (this.yPos+this.width/2)+16);
+      }
 
   }
 
