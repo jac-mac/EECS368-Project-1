@@ -29,7 +29,7 @@ function Cell(xPosition, yPosition, widthOfCell) {
 
   }
 
-  Cell.prototype.setValue= function(someValue)
+  Cell.prototype.setValue = function(someValue)
   {
     this.value = someValue;
   }
